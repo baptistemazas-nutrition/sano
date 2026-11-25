@@ -1,69 +1,17 @@
-# Welcome to your Lovable project
+# Sano
 
-## Project info
+Outil numérique de prévention en santé, imaginé par le Dr Baptiste Mazas (endocrinologie, diabétologie et nutrition), fondateur du projet.
 
-**URL**: https://lovable.dev/projects/ffa3312c-8bf3-428a-acf2-9adc5603a539
+Le site : https://baptistemazas-nutrition.github.io/sano/
 
-## How can I edit this code?
+Le projet est en développement.
 
-There are several ways of editing your application.
+## Technique
 
-**Use Lovable**
+Application React (Vite, TypeScript, Tailwind CSS), construite et publiée avec GitHub Pages à chaque mise à jour.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ffa3312c-8bf3-428a-acf2-9adc5603a539) and start prompting.
+## Propriété intellectuelle
 
-Changes made via Lovable will be committed automatically to this repo.
+© 2025-2026 Baptiste Mazas, tous droits réservés. Le site se consulte librement. Le code, les textes et le design ne peuvent être ni copiés, ni modifiés, ni redistribués, ni exploités commercialement sans mon accord écrit : voir la [licence](LICENSE).
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/ffa3312c-8bf3-428a-acf2-9adc5603a539) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+Vous souhaitez développer ce projet avec moi, l'intégrer à votre offre ou obtenir une licence ? Écrivez-moi sur [LinkedIn](https://www.linkedin.com/in/baptiste-mazas-577219182/).
