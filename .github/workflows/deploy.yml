@@ -1,0 +1,51 @@
+name: Publier le site Sano
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm install --no-audit --no-fund
+      - name: Adapter le site au sous-dossier /sano/
+        run: |
+          sed -i 's#<BrowserRouter>#<BrowserRouter basename={import.meta.env.BASE_URL}>#' src/App.tsx
+          sed -i 's#href="/"#href={import.meta.env.BASE_URL}#' src/pages/NotFound.tsx
+          sed -i -e 's#<html lang="en">#<html lang="fr">#' \
+            -e 's#<title>.*</title>#<title>Sano — la science médicale et la prévention accessibles à tous</title>#' \
+            -e 's#content="Lovable Generated Project"#content="L’écosystème médical intelligent du quotidien pour les médecins et les patients."#' \
+            -e 's#<meta name="author" content="Lovable" />#<meta name="author" content="Sano" />#' \
+            -e 's#<meta property="og:image".*#<meta property="og:title" content="Sano — la science médicale et la prévention accessibles à tous" />\n    <meta property="og:description" content="L’écosystème médical intelligent du quotidien pour les médecins et les patients." />\n    <meta property="og:type" content="website" />#' \
+            -e '/gptengineer/d' -e '/DO NOT REMOVE THIS SCRIPT TAG/d' index.html
+      - run: npx vite build --base=/sano/
+      - run: cp dist/index.html dist/404.html && rm -f dist/og-image.png
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
